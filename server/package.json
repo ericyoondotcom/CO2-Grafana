@@ -1,0 +1,23 @@
+{
+  "name": "co2-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericyoondotcom/CO2-Grafana.git"
+  },
+  "author": "Yoonicode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericyoondotcom/CO2-Grafana/issues"
+  },
+  "homepage": "https://github.com/ericyoondotcom/CO2-Grafana#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "prom-client": "^15.1.3"
+  }
+}

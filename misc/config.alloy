@@ -1,0 +1,17 @@
+prometheus.scrape "node" {
+  targets = [
+    {"__address__" = "localhost:1500"},
+  ]
+  forward_to = [prometheus.remote_write.grafana_cloud.receiver]
+}
+
+prometheus.remote_write "grafana_cloud" {
+   endpoint {
+      url  = "https://prometheus-prod-56-prod-us-east-2.grafana.net/api/prom/push"
+  
+      basic_auth {
+        username = "2488689"
+        password = "<<YOUR API KEY>>"
+      }
+   }
+}

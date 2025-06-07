@@ -1,0 +1,16 @@
+[Unit]
+Description=Prometheus
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+ExecStart= /home/ubuntu/server/prometheus/prometheus \
+  --config.file=/home/ubuntu/server/CO2-Grafana/misc/prometheus.yml \
+  --storage.tsdb.path=/home/ubuntu/server/prometheus/data
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
