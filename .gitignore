@@ -1,4 +1,6 @@
 data-alloy
+secrets.js
+auth-data.json
 
 # Logs
 logs

@@ -17,6 +17,8 @@ First, install dependencies:
 npm install
 ```
 
+Then, copy `server/secrets.js.template` to `server/secrets.js` and fill in your Netatmo API credentials.
+
 We'll use PM2 to run the NodeJS script in the background.
 
 ```bash

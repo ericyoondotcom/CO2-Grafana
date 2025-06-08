@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ericyoondotcom/CO2-Grafana.git"
@@ -17,7 +18,9 @@
   },
   "homepage": "https://github.com/ericyoondotcom/CO2-Grafana#readme",
   "dependencies": {
+    "authconnect-djs": "file:../../authconnectdjs/authconnect-djs",
     "express": "^5.1.0",
+    "node-fetch": "^3.3.2",
     "prom-client": "^15.1.3"
   }
 }
