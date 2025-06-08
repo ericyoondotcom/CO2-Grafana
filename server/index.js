@@ -38,7 +38,7 @@ async function init() {
         setInterval(poll, 15000);
     } else {
         const url = auth.generateAuthURL("netatmo", GUILD_ID_FAKE, NETATMO_SCOPES);
-        console.log("Please visi the following URL to log in to Netatmo:");
+        console.log("Please visit the following URL to log in to Netatmo:");
         console.log(url);
         console.log("After logging in, kill and restart the server.");
     }
