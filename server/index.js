@@ -35,7 +35,7 @@ auth.useDefaultDataHandlers("./auth-data.json");
 
 async function init() {
     if(await auth.isGuildLoggedIn("netatmo", GUILD_ID_FAKE)) {
-        setInterval(poll, 5000);
+        setInterval(poll, 15000);
     } else {
         const url = auth.generateAuthURL("netatmo", GUILD_ID_FAKE, NETATMO_SCOPES);
         console.log("Please visi the following URL to log in to Netatmo:");
