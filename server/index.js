@@ -36,6 +36,7 @@ auth.useDefaultDataHandlers("./auth-data.json");
 async function init() {
     if(await auth.isGuildLoggedIn("netatmo", GUILD_ID_FAKE)) {
         setInterval(poll, 15000);
+        poll();
     } else {
         const url = auth.generateAuthURL("netatmo", GUILD_ID_FAKE, NETATMO_SCOPES);
         console.log("Please visit the following URL to log in to Netatmo:");
@@ -47,8 +48,12 @@ async function init() {
 async function poll() {
     try {
         const accessToken = await auth.getAccessToken("netatmo", GUILD_ID_FAKE);
+        const now = Math.floor(Date.now() / 1000);
+        const oneHourAgo = now - 3600;
         const params = new URLSearchParams({
             device_id: NETATMO_DEVICE_ID,
+            date_begin: oneHourAgo,
+            date_end: now,
             scale: "30min",
             type: "co2",
         });
